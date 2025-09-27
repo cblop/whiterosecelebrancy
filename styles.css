@@ -1,0 +1,388 @@
+/* Custom CSS for Serenity Wellness - Warm, Old-Fashioned Styling */
+
+/* Font imports and basic styling */
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-crimson {
+    font-family: 'Crimson Text', serif;
+}
+
+/* Custom theme overrides for forest theme with green color scheme */
+[data-theme="forest"] {
+    /* Green color scheme: #4f7942, #4a5d23, #8a9a5b */
+    --p: 98 31% 32%; /* Primary - #4f7942 (medium green) */
+    --pc: 0 0% 100%; /* Primary content - white text */
+    --s: 84 45% 23%; /* Secondary - #4a5d23 (dark green) */
+    --sc: 0 0% 100%; /* Secondary content - white text */
+    --a: 73 25% 48%; /* Accent - #8a9a5b (light sage green) */
+    --ac: 0 0% 15%; /* Accent content - dark text */
+
+    /* Override forest theme backgrounds to very light green */
+    --b1: 102 50% 97%; /* Base background - very light green */
+    --b2: 102 40% 95%; /* Secondary background - slightly tinted */
+    --b3: 102 30% 93%; /* Tertiary background - barely visible tint */
+    --bc: 0 0% 15%; /* Base content - dark gray text */
+
+    /* Neutral colors */
+    --n: 84 45% 23%; /* Neutral - dark green */
+    --nc: 0 0% 100%; /* Neutral content - white */
+    --nf: 98 31% 32%; /* Neutral focus - medium green */
+}
+
+/* Force all background classes to use very light green colors */
+.bg-base-100 {
+    background-color: #f8fdf6 !important; /* Very light green, almost white */
+}
+
+.bg-base-200 {
+    background-color: #f4fbf0 !important; /* Slightly tinted green */
+}
+
+.bg-base-300 {
+    background-color: #f0f9ea !important; /* Barely visible green tint */
+}
+
+/* Ensure body and main sections use very light green */
+body {
+    background-color: #f8fdf6 !important;
+}
+
+section {
+    background-color: #f8fdf6 !important;
+}
+
+/* Override specific section backgrounds */
+#about, #services, #contact {
+    background-color: #f8fdf6 !important;
+}
+
+/* Fix stats section background */
+.stats {
+    background-color: #f4fbf0 !important;
+}
+
+.stat {
+    background-color: #f4fbf0 !important;
+}
+
+/* Fix form input backgrounds */
+.input, .input-bordered, .textarea, .select {
+    background-color: rgb(255, 255, 255) !important;
+    border-color: rgb(209, 213, 219) !important;
+    color: rgb(38, 38, 38) !important;
+}
+
+.input:focus, .input-bordered:focus, .textarea:focus, .select:focus {
+    background-color: rgb(255, 255, 255) !important;
+    border-color: hsl(var(--p)) !important;
+}
+
+/* Prominent green headers and primary text */
+.text-primary, .text-primary * {
+    color: #4f7942 !important;
+}
+
+h1.text-primary, h2.text-primary, h3.text-primary {
+    color: #4a5d23 !important;
+    font-weight: bold;
+}
+
+.card-title {
+    color: #4f7942 !important;
+}
+
+.stat-value.text-primary {
+    color: #4a5d23 !important;
+    font-weight: bold;
+}
+
+/* Fix yellow text - make all content text very dark grey */
+.text-base-content {
+    color: rgb(55, 65, 81) !important; /* Very dark grey */
+}
+
+.text-base-content\/80 {
+    color: rgb(55, 65, 81) !important; /* Very dark grey */
+}
+
+.text-base-content\/70 {
+    color: rgb(55, 65, 81) !important; /* Very dark grey */
+}
+
+.stat-title {
+    color: rgb(75, 85, 99) !important; /* Slightly lighter dark grey for labels */
+}
+
+/* Override any other yellow text content */
+p, .font-crimson {
+    color: rgb(55, 65, 81) !important;
+}
+
+/* Fix main "Serenity Wellness" title in navbar */
+.btn-ghost {
+    color: rgb(0, 0, 0) !important; /* Black */
+}
+
+.navbar .btn-ghost {
+    color: rgb(0, 0, 0) !important; /* Black */
+}
+
+/* Footer title */
+.footer .font-bold {
+    color: rgb(0, 0, 0) !important; /* Black */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prominent green button styling */
+.btn-primary {
+    background-color: #4f7942 !important;
+    border-color: #4f7942 !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: #4a5d23 !important;
+    border-color: #4a5d23 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 121, 66, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-outline.btn-primary {
+    background-color: transparent !important;
+    border-color: #4f7942 !important;
+    color: #4f7942 !important;
+}
+
+.btn-outline.btn-primary:hover {
+    background-color: #4f7942 !important;
+    border-color: #4f7942 !important;
+    color: white !important;
+}
+
+/* Card hover effects */
+.card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Decorative elements */
+.section-divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--p)), hsl(var(--s)), hsl(var(--a)));
+    margin: 2rem auto;
+    border-radius: 2px;
+}
+
+/* Hero section styling with vertical layout */
+.hero .hero-content {
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.hero h1 {
+    text-align: center;
+}
+
+.hero p {
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Navigation styling */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: hsl(var(--b2) / 0.95);
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-start {
+        flex: none;
+    }
+
+    .navbar-start .btn {
+        padding: 0.5rem;
+        min-height: auto;
+        height: auto;
+    }
+
+    .navbar-end .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar-end .btn {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.8125rem;
+    }
+
+    .navbar-start .btn {
+        font-size: 1rem;
+    }
+}
+
+/* Form styling */
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+    border-color: hsl(var(--p));
+    box-shadow: 0 0 0 3px hsl(var(--p) / 0.1);
+}
+
+/* Rating stars use theme primary color */
+.rating input {
+    color: hsl(var(--p));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--b1));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--p));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--s));
+}
+
+/* Stats styling */
+.stats .stat-value {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom badge styling with prominent green */
+.badge-secondary {
+    background-color: #8a9a5b !important;
+    color: white !important;
+    border: none;
+}
+
+/* Decorative dividers with green colors */
+.w-24.h-1.bg-secondary {
+    background-color: #8a9a5b !important;
+}
+
+/* Navigation hover effects */
+.navbar a:hover, .menu a:hover {
+    color: #4f7942 !important;
+}
+
+.hover\:text-primary:hover {
+    color: #4f7942 !important;
+}
+
+/* Testimonial cards custom styling */
+.testimonials .card {
+    border-left: 4px solid hsl(var(--p));
+}
+
+/* Contact section background */
+#contact {
+    background-image:
+        linear-gradient(135deg, hsl(var(--b1) / 0.9) 0%, hsl(var(--b2) / 0.9) 100%);
+}
+
+/* Footer styling */
+.footer {
+    background: linear-gradient(135deg, hsl(var(--n)) 0%, hsl(var(--nf)) 100%);
+    color: #9ca3af !important; /* Light grey text */
+}
+
+.footer p {
+    color: #9ca3af !important; /* Light grey text */
+}
+
+.footer .font-bold {
+    color: #d1d5db !important; /* Much lighter grey for title */
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .text-4xl {
+        font-size: 2rem;
+    }
+}
+
+/* Animation for cards appearing on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom focus states for accessibility */
+.btn:focus-visible,
+a:focus-visible {
+    outline: 2px solid hsl(var(--p));
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .footer,
+    .btn {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
