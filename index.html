@@ -10,6 +10,60 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-base-100">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.querySelector('.dropdown .btn');
+            const dropdownMenu = document.querySelector('.dropdown .menu');
+            const menuLinks = document.querySelectorAll('.dropdown .menu a');
+
+            // Debug: Add visual indicator when dropdown is active
+            hamburgerBtn.addEventListener('focus', function() {
+                console.log('Hamburger button focused - dropdown should be visible');
+                dropdownMenu.style.display = 'block';
+            });
+
+            hamburgerBtn.addEventListener('blur', function() {
+                console.log('Hamburger button blurred - dropdown should hide');
+                setTimeout(() => {
+                    if (!dropdownMenu.matches(':focus-within')) {
+                        dropdownMenu.style.display = '';
+                    }
+                }, 150);
+            });
+
+            // Ensure dropdown closes when menu links are clicked
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('Menu link clicked:', e.target.textContent);
+                    // Allow the default navigation to happen
+                    // Then close the dropdown
+                    setTimeout(() => {
+                        hamburgerBtn.blur();
+                        dropdownMenu.blur();
+                        document.activeElement.blur();
+                        // Force close by removing focus from any element
+                        if (document.activeElement) {
+                            document.activeElement.blur();
+                        }
+                    }, 100);
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                const dropdown = document.querySelector('.dropdown');
+                if (dropdown && !dropdown.contains(e.target)) {
+                    hamburgerBtn.blur();
+                    dropdownMenu.blur();
+                }
+            });
+
+            // Add click event listener to test if clicks are registering
+            dropdownMenu.addEventListener('click', function(e) {
+                console.log('Dropdown clicked:', e.target);
+            });
+        });
+    </script>
     <!-- Navigation -->
     <div class="navbar bg-base-200 shadow-lg">
         <div class="navbar-start">
@@ -19,7 +73,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
                     </svg>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[9999] p-2 shadow bg-base-100 rounded-box w-52">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>

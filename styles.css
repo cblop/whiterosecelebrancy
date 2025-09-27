@@ -189,6 +189,8 @@ html {
     margin: 0 auto;
     padding: 0 2rem;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -218,6 +220,8 @@ html {
 .navbar {
     backdrop-filter: blur(10px);
     background-color: hsl(var(--b2) / 0.95);
+    position: relative;
+    z-index: 1000;
 }
 
 /* Mobile navigation improvements */
@@ -299,6 +303,50 @@ html {
 /* Decorative dividers with green colors */
 .w-24.h-1.bg-secondary {
     background-color: #8a9a5b !important;
+}
+
+/* Mobile dropdown menu styling */
+.dropdown {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+/* Ensure navbar doesn't clip dropdown */
+.navbar {
+    overflow: visible !important;
+}
+
+.navbar .navbar-start {
+    overflow: visible !important;
+}
+
+.dropdown .menu.dropdown-content {
+    background-color: #f8fdf6 !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    position: absolute !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* Override any base background classes for dropdown */
+.dropdown .menu.dropdown-content.bg-base-100 {
+    background-color: #f8fdf6 !important;
+    opacity: 1 !important;
+}
+
+.dropdown .menu.dropdown-content li a {
+    color: #374151 !important;
+    padding: 0.75rem 1rem !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 10000 !important;
+    pointer-events: auto !important;
+}
+
+.dropdown .menu.dropdown-content li a:hover {
+    background-color: #f3f4f6 !important;
+    color: #4f7942 !important;
 }
 
 /* Navigation hover effects */
